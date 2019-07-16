@@ -18,6 +18,7 @@ public class TestRunner {
     static MainPage mainPage;
     static ManufacturingHomePage manufacturingHome;
 
+
     @BeforeMethod
     public void loginAndGoToManufacturingLink()
     {
