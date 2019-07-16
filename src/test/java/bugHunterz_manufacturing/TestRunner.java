@@ -1,4 +1,4 @@
-package bugHunterz_Manufacturing;
+package bugHunterz_manufacturing;
 
 import locators.LoginPage;
 import locators.MainPage;
