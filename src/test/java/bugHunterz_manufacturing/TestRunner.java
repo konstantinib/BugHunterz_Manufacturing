@@ -1,5 +1,6 @@
 package bugHunterz_manufacturing;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import locators.LoginPage;
 import locators.MainPage;
 import locators.ManufacturingHomePage;
@@ -7,9 +8,7 @@ import locators.ManufacturingReportingPage;
 import locators.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import utilities.Config;
 import utilities.Driver;
@@ -18,24 +17,26 @@ import java.util.concurrent.TimeUnit;
 
 public class TestRunner {
 
-    static WebDriver driver = Driver.getDriver();
-    static LoginPage loginPage;
-    static MainPage mainPage;
-    static ManufacturingHomePage manufacturingHome;
-    static ManufacturingReportingPage manufacturingReportPage;
-    static ProductsPage productPage;
+    WebDriver driver;
+    LoginPage loginPage;
+    MainPage mainPage;
+    ManufacturingHomePage manufacturingHome;
+    ManufacturingReportingPage manufacturingReportPage;
+    ProductsPage productPage;
 
 
     @BeforeMethod
     public void loginAndGoToManufacturingLink()
     {
-        //1st Initialize the loginPage & mainPage constructor
-        loginPage = new LoginPage(driver);
-        mainPage = new MainPage(driver);
-
+        //driver = Driver.getDriver();
         //2nd Navigating to Log-In Page
-        driver.get(Config.getProperty("url"));
-        driver.manage().timeouts().implicitlyWait(5 , TimeUnit.SECONDS);
+        Driver.getDriver().get(Config.getProperty("url"));
+        //driver.manage().timeouts().implicitlyWait(5 , TimeUnit.SECONDS);
+
+        //1st Initialize the loginPage & mainPage constructor
+        loginPage = new LoginPage();
+        mainPage = new MainPage();
+
 
         //3rd Entering username
         loginPage.getUsernameTextField.sendKeys(Config.getProperty("username"));
@@ -45,20 +46,20 @@ public class TestRunner {
 
         //5th Clicking the "Login" button
         loginPage.getLoginButton.click();
-        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
         //6th Click the "Manufacturing" link on the top navigation bar
         mainPage.getManufacturingLink.click();
-        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
     }
 
     @Test(priority = 1)
     public void Cesar_groupByRouting() throws InterruptedException
     {
-        manufacturingHome = new ManufacturingHomePage(driver);
+        manufacturingHome = new ManufacturingHomePage();
 
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(Driver.getDriver());
 
 
         Thread.sleep(3000);
@@ -67,7 +68,7 @@ public class TestRunner {
         //manufacturingHome.getReportingManufacturingLink.click();
 
         //2nd Click on the "Advanced Search" link on the search bar
-        manufacturingReportPage = new ManufacturingReportingPage(driver);
+        manufacturingReportPage = new ManufacturingReportingPage();
         Thread.sleep(3000);
         actions.moveToElement(manufacturingReportPage.getAdvancedSearchButton).click().perform();
 
@@ -77,7 +78,7 @@ public class TestRunner {
         //4th Click on the "Routing" link in the drop down menu
         Thread.sleep(1000);
         actions.moveToElement(manufacturingReportPage.getRoutingLink).click().perform();
-        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
+       // driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
 
         //5th Once we click on the "Routing" link, we should assert that new graph is displayed
@@ -88,15 +89,15 @@ public class TestRunner {
 
     @Test(priority = 2)
     public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
-        manufacturingHome = new ManufacturingHomePage(driver);
-        Thread.sleep(1000);
+        manufacturingHome = new ManufacturingHomePage();
+        Thread.sleep(2000);
 
 //     Click on "Product" link under "Master Data"
         manufacturingHome.productsLink.click();
 
 //     Verify that advanced search is on
         Thread.sleep(2000);
-        productPage = new ProductsPage(driver);
+        productPage = new ProductsPage();
         productPage.advancedSearchButton.click();
 
 //     Locate and click on "Filters" button
@@ -112,8 +113,9 @@ public class TestRunner {
     @AfterMethod
     public void close()
     {
-        driver.close();
+//        driver.close();
 //        driver = null;
+        Driver.quitDriver();
     }
 
 

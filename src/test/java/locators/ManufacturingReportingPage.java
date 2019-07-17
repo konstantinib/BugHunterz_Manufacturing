@@ -4,14 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 public class ManufacturingReportingPage {
 
     public WebDriver driver;
 
-    public ManufacturingReportingPage(WebDriver driver)
+    public ManufacturingReportingPage()
     {
-        this.driver = driver;
+        this.driver = Driver.getDriver();
         PageFactory.initElements(driver , this);
     }
 
