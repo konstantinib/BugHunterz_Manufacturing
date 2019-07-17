@@ -5,8 +5,12 @@ import locators.MainPage;
 import locators.ManufacturingHomePage;
 import locators.ManufacturingReportingPage;
 import locators.ProductsPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,6 +18,7 @@ import org.testng.asserts.SoftAssert;
 import utilities.Config;
 import utilities.Driver;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestRunner {
@@ -112,6 +117,64 @@ public class TestRunner {
         Thread.sleep(1000);
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(productPage.filtersDropDownMenu.isDisplayed(), "Drop down menu is not displayed!");
+
+    }
+
+    @Test(priority = 3)
+    public void EmreSearchFunctionalityInProductSection() throws InterruptedException {
+
+        Thread.sleep(5000);
+
+        Actions action = new Actions(Driver.getDriver());
+        WebElement scrollingDown = Driver.getDriver().findElement(By.xpath("//td[@title='Total Qty']"));
+        // to scroll down to the end of the page
+        action.moveToElement(scrollingDown).perform();
+
+        Thread.sleep(3000);
+        ProductsPage product = new ProductsPage();
+        action.moveToElement(product.searchButton);
+        Thread.sleep(2000);
+        // click the product button on the home page
+        product.productButton.click();
+
+        // storing all the lists into Webelement of List
+        List<WebElement> allList = Driver.getDriver().findElements(By.xpath("//div[@class='o_kanban_view o_kanban_ungrouped']//strong"));
+        // loop through all list
+        for(WebElement w: allList){
+
+            if(w.getText().equals("Book")){
+                // choosing the product that we're looking for
+                w.click();
+                break;
+            }
+        }
+        // going back to previous page
+        Thread.sleep(4000);
+        Driver.getDriver().navigate().back();
+
+        Thread.sleep(2000);
+        // putting input into searchButton
+        product.searchButton.sendKeys("iphone 8");
+        Thread.sleep(2000);
+        // deleting input from searchButton
+        product.searchButton.clear();
+        Thread.sleep(2000);
+        // putting input into searchButton and pressing enter
+        product.searchButton.sendKeys("IPHONE 8" + Keys.ENTER);
+
+        boolean check = false;
+        Thread.sleep(3000);
+        // storing all the results into List
+        List<WebElement> listForInput = Driver.getDriver().findElements(By.xpath("//div[@class='o_kanban_view o_kanban_ungrouped']//strong"));
+
+        for(WebElement w: listForInput){
+            if(w.getText().equalsIgnoreCase("iphone 8")){
+                check = true;
+            }
+        }
+        Assert.assertTrue(check);
+
+
 
     }
     @AfterMethod
