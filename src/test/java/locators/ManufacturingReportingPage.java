@@ -31,6 +31,7 @@ public class ManufacturingReportingPage {
  /* By advancedSeachButton = By.cssSelector(".o_searchview_more.fa.fa-search-plus");
     By groupByButton = By.xpath();
     By routingLink = By.linkText("Routing");
+
     public WebElement getAdvancedSearchButton()
     {
         return driver.findElement(advancedSeachButton);
@@ -40,4 +41,5 @@ public class ManufacturingReportingPage {
         return driver.findElement(groupByButton);
     }
     public WebElement getRoutingLink(){ return  driver.findElement(routingLink); }*/
+
 }

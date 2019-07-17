@@ -26,6 +26,7 @@ public class TestRunner {
     static ProductsPage productPage;
 
 
+
     @BeforeMethod
     public void loginAndGoToManufacturingLink()
     {
@@ -54,6 +55,7 @@ public class TestRunner {
     }
 
     @Test(priority = 1)
+
     public void Cesar_groupByRouting() throws InterruptedException
     {
         manufacturingHome = new ManufacturingHomePage(driver);
@@ -87,6 +89,7 @@ public class TestRunner {
     }
 
     @Test(priority = 2)
+  
     public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
         manufacturingHome = new ManufacturingHomePage(driver);
         Thread.sleep(1000);
@@ -109,11 +112,12 @@ public class TestRunner {
         softAssert.assertTrue(productPage.filtersDropDownMenu.isDisplayed(), "Drop down menu is not displayed!");
 
     }
+
     @AfterMethod
     public void close()
     {
         driver.close();
-//        driver = null;
+        driver = null;
     }
 
 

@@ -18,5 +18,4 @@ public class MainPage {
     @FindBy(linkText = "Manufacturing")
     public WebElement getManufacturingLink;
 
-
 }
