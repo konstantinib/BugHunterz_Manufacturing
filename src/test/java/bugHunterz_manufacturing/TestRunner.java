@@ -1,6 +1,5 @@
 package bugHunterz_manufacturing;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import locators.LoginPage;
 import locators.MainPage;
 import locators.ManufacturingHomePage;
@@ -8,7 +7,9 @@ import locators.ManufacturingReportingPage;
 import locators.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Config;
 import utilities.Driver;
@@ -23,6 +24,7 @@ public class TestRunner {
     ManufacturingHomePage manufacturingHome;
     ManufacturingReportingPage manufacturingReportPage;
     ProductsPage productPage;
+
 
 
     @BeforeMethod
@@ -55,6 +57,7 @@ public class TestRunner {
     }
 
     @Test(priority = 1)
+
     public void Cesar_groupByRouting() throws InterruptedException
     {
         manufacturingHome = new ManufacturingHomePage();
@@ -88,6 +91,7 @@ public class TestRunner {
     }
 
     @Test(priority = 2)
+
     public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
         manufacturingHome = new ManufacturingHomePage();
         Thread.sleep(2000);
