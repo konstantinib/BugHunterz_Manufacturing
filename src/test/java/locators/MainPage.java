@@ -17,6 +17,7 @@ public class MainPage {
 
     public WebElement getManufactoringLink()
     {
+
         return driver.findElement(manufactoringLink);
     }
 }

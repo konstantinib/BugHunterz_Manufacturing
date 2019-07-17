@@ -13,7 +13,7 @@ public class ManufacturingHomePage {
         this.driver = driver;
     }
 
-    By reportingManufacturingLink = By.xpath("//div[@class = 'o_sub_menu_content']/div[6]/ul[3]/li/a");
+    By reportingManufacturingLink = By.linkText("Manufacturing");
 
     public WebElement getReportingManufactoringLink()
     {
