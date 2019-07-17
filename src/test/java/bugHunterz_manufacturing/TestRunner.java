@@ -4,6 +4,7 @@ import locators.LoginPage;
 import locators.MainPage;
 import locators.ManufacturingHomePage;
 import locators.ManufacturingReportingPage;
+import locators.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
@@ -22,6 +23,8 @@ public class TestRunner {
     static MainPage mainPage;
     static ManufacturingHomePage manufacturingHome;
     static ManufacturingReportingPage manufacturingReportPage;
+    static ProductsPage productPage;
+
 
 
     @BeforeMethod
@@ -51,7 +54,8 @@ public class TestRunner {
 
     }
 
-    @Test
+    @Test(priority = 1)
+
     public void Cesar_groupByRouting() throws InterruptedException
     {
         manufacturingHome = new ManufacturingHomePage(driver);
@@ -82,6 +86,31 @@ public class TestRunner {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(manufacturingReportPage.getGraph.isDisplayed(), "Graph was not displayed!");
         System.out.println("Cesar's Method Finished With No Problems");
+    }
+
+    @Test(priority = 2)
+  
+    public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
+        manufacturingHome = new ManufacturingHomePage(driver);
+        Thread.sleep(1000);
+
+//     Click on "Product" link under "Master Data"
+        manufacturingHome.productsLink.click();
+
+//     Verify that advanced search is on
+        Thread.sleep(2000);
+        productPage = new ProductsPage(driver);
+        productPage.advancedSearchButton.click();
+
+//     Locate and click on "Filters" button
+        Thread.sleep(2000);
+        productPage.filtersLink.click();
+
+//     Verifying that dropdown menu is displayed
+        Thread.sleep(1000);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(productPage.filtersDropDownMenu.isDisplayed(), "Drop down menu is not displayed!");
+
     }
 
     @AfterMethod
