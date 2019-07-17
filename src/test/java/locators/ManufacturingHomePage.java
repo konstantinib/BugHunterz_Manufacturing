@@ -18,5 +18,8 @@ public class ManufacturingHomePage {
     @FindBy(xpath = "//div[@class = 'o_sub_menu_content']/div[6]/ul[3]/li/a")
     public WebElement getReportingManufacturingLink;
 
+    @FindBy(xpath = "//a[@data-menu='437']/span")
+    public WebElement productsLink;
+
 
 }

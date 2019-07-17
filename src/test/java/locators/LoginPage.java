@@ -30,7 +30,6 @@ public class LoginPage {
 /*  By usernameTextField = By.cssSelector("#login");
     By passwordTextField = By.cssSelector("#password");
     By loginButton       = By.cssSelector(".btn.btn-primary");
-
     public WebElement getUsernameTextField()
     {
         return driver.findElement(usernameTextField);
