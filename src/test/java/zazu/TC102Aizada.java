@@ -15,16 +15,17 @@ import utilities.Driver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class TC102 {
+public class TC102Aizada {
     static WebDriver driver = Driver.getDriver();
     static LoginPage loginPage;
     static MainPage mainPage;
     static ManufacturingHomePage manufacturingHome;
 
+
     @BeforeMethod
     public void loginAndGoToManufacturingLink()  throws InterruptedException{
         //1st Initialize the loginPage & mainPage constructor
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         mainPage = new MainPage(driver);
 
         //2nd Navigating to Log-In Page
@@ -32,20 +33,18 @@ public class TC102 {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         //3rd Entering username
-        loginPage.getUsernameTextField().sendKeys(Config.getProperty("username"));
+        loginPage.getUsernameTextField.sendKeys(Config.getProperty("username"));
 
         //4th Entering password
-        loginPage.getPasswordTextField().sendKeys(Config.getProperty("password"));
+        loginPage.getPasswordTextField.sendKeys(Config.getProperty("password"));
 
         //5th Clicking the "Login" button
-        loginPage.getLoginButton().click();
+        loginPage.getLoginButton.click();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
         //6th Click the "Manufacturing" link on the top navigation bar
-        mainPage.getManufactoringLink().click();
+        mainPage.getManufacturingLink.click();
         Thread.sleep(3000);
-
-
     }
 
 
