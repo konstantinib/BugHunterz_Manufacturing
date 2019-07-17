@@ -177,6 +177,42 @@ public class TestRunner {
 
 
     }
+
+    @Test(priority = 4)
+    public void aizada_FilterButton() throws InterruptedException
+    {
+        Thread.sleep(3000);
+        // 1- Click on second ManufacturingOrders link in Manufacturing home page
+        WebElement manufacturingOrderLink = Driver.getDriver().findElement(By.xpath("(//span[@class='oe_menu_text'])[19]"));
+        manufacturingOrderLink.click();
+
+        String actualMOLDisplayed = Driver.getDriver().findElement(By.xpath("(//span[@class='oe_menu_text'])[19]")).getText();
+        String expectedResult = "Manufacturing Orders";
+
+        // 2- Creating an object of SoftAssert
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(actualMOLDisplayed.equals(expectedResult));
+        Thread.sleep(3000);
+
+        // 3- Click on plus button, to see the filter button
+        WebElement plusButton = Driver.getDriver().findElement(By.xpath("//span[@title='Advanced Search...']"));
+        plusButton.click();
+
+        // 4- Checking the plus button is changed to minus
+        WebElement advanceSearch = Driver.getDriver().findElement(By.xpath("//span[@title='Advanced Search...']"));
+        softAssert.assertTrue(advanceSearch.getAttribute("class").contains("minus"));
+        Thread.sleep(3000);
+
+        // 5- Click on filters button
+        WebElement filtersButton = Driver.getDriver().findElement(By.xpath("(//button[@aria-expanded='false'])[2]"));
+        filtersButton.click();
+        WebElement filters = Driver.getDriver().findElement(By.xpath("(//button[@aria-expanded='false'])[2]"));
+        softAssert.assertTrue(filters.getAttribute("class").contains("toggle"));
+
+
+
+    }
+
     @AfterMethod
     public void close()
     {

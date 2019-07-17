@@ -9,6 +9,7 @@
         <module name="Manufacturing" />
         <module name="BugHunterz_Manufacturingb" />
         <module name="BugHunterz_Manufacturing" />
+        <module name="BugHunterz_Manufacturing2" />
       </profile>
     </annotationProcessing>
   </component>
