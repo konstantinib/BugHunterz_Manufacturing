@@ -4,9 +4,14 @@ import locators.LoginPage;
 import locators.MainPage;
 import locators.ManufacturingHomePage;
 import locators.ManufacturingReportingPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utilities.Config;
 import utilities.Driver;
 
@@ -53,26 +58,40 @@ public class TestRunner {
     {
         manufacturingHome = new ManufacturingHomePage(driver);
 
+        Actions actions = new Actions(driver);
 
-        Thread.sleep(4000);
+
+        Thread.sleep(3000);
         //1st Click on the "Manufacturing Orders" link under "Reporting"
-        manufacturingHome.getReportingManufacturingLink.click();
+        actions.moveToElement(manufacturingHome.getReportingManufacturingLink).click().perform();
+        //manufacturingHome.getReportingManufacturingLink.click();
 
         //2nd Click on the "Advanced Search" link on the search bar
         manufacturingReportPage = new ManufacturingReportingPage(driver);
         Thread.sleep(3000);
-        manufacturingReportPage.getAdvancedSearchButton.click();
+        actions.moveToElement(manufacturingReportPage.getAdvancedSearchButton).click().perform();
 
         //3rd Click on the "Group By" button
-        manufacturingReportPage.getGroupByButton.click();
+        actions.moveToElement(manufacturingReportPage.getGroupByButton).click().perform();
 
         //4th Click on the "Routing" link in the drop down menu
         Thread.sleep(1000);
-        manufacturingReportPage.getRoutingLink.click();
+        actions.moveToElement(manufacturingReportPage.getRoutingLink).click().perform();
+        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
+
+        //5th Once we click on the "Routing" link, we should assert that new graph is displayed
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(manufacturingReportPage.getGraph.isDisplayed(), "Graph was not displayed!");
+        System.out.println("Cesar's Method Finished With No Problems");
     }
 
-
+    @AfterMethod
+    public void close()
+    {
+        driver.close();
+        driver = null;
+    }
 
 
 
