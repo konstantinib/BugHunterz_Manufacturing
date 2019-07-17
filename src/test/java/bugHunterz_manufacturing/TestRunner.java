@@ -64,8 +64,8 @@ public class TestRunner {
     @Test
     public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
         manufacturingHome = new ManufacturingHomePage(driver);
-
         Thread.sleep(1000);
+
 //     Click on "Product" link under "Master Data"
         manufacturingHome.productsLink.click();
 
