@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 
 public class LoginPage {
@@ -11,9 +12,9 @@ public class LoginPage {
     public WebDriver driver;
 
 
-    public LoginPage(WebDriver driver)
+    public LoginPage()
     {
-        this.driver = driver;
+        this.driver = Driver.getDriver();
         PageFactory.initElements(driver , this);
     }
 
