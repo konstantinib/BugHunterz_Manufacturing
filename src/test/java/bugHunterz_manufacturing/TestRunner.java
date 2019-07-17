@@ -53,7 +53,7 @@ public class TestRunner {
 
     }
 
-    @Test
+    @Test(priority = 1)
     public void Cesar_groupByRouting() throws InterruptedException
     {
         manufacturingHome = new ManufacturingHomePage(driver);
@@ -86,7 +86,7 @@ public class TestRunner {
         System.out.println("Cesar's Method Finished With No Problems");
     }
 
-    @Test
+    @Test(priority = 2)
     public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
         manufacturingHome = new ManufacturingHomePage(driver);
         Thread.sleep(1000);
@@ -113,7 +113,7 @@ public class TestRunner {
     public void close()
     {
         driver.close();
-        driver = null;
+//        driver = null;
     }
 
 
