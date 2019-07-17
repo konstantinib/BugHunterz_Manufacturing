@@ -25,4 +25,10 @@ public class ProductsPage {
     @FindBy(xpath = "//ul[@class='dropdown-menu o_filters_menu']")
     public WebElement filtersDropDownMenu;
 
+    @FindBy(xpath = "//a[@href='/web#menu_id=437&action=603']")
+    public WebElement productButton;
+
+    @FindBy(className = "o_searchview_input")
+    public WebElement searchButton;
+
 }
