@@ -19,4 +19,9 @@ public class MainPage {
     @FindBy(linkText = "Manufacturing")
     public WebElement getManufacturingLink;
 
+    public WebElement getManufactoringLink()
+    {
+
+        return driver.findElement(manufactoringLink);
+    }
 }

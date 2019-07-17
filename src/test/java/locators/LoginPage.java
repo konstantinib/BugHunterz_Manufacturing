@@ -14,6 +14,7 @@ public class LoginPage {
 
     public LoginPage()
     {
+        driver = Driver.getDriver();
         this.driver = Driver.getDriver();
         PageFactory.initElements(driver , this);
     }
