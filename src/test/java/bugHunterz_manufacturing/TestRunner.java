@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utilities.Config;
 import utilities.Driver;
 
@@ -79,13 +80,9 @@ public class TestRunner {
 
 //     Verifying that dropdown menu is displayed
         Thread.sleep(1000);
-       Assert.assertTrue(productPage.filtersDropDownMenu.isDisplayed());
-
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(productPage.filtersDropDownMenu.isDisplayed(), "Drop down menu is not displayed!");
 
     }
-
-
-
-
 
 }
