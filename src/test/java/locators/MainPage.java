@@ -1,8 +1,9 @@
 package locators;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
@@ -11,10 +12,11 @@ public class MainPage {
     public MainPage(WebDriver driver)
     {
         this.driver = driver;
+        PageFactory.initElements(driver , this);
     }
 
-    By manufactoringLink = By.linkText("Manufacturing");
-
+    @FindBy(linkText = "Manufacturing")
+    public WebElement getManufacturingLink;
     public WebElement getManufactoringLink()
     {
 
