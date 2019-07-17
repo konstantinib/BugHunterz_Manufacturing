@@ -26,7 +26,7 @@ public class TC102Aizada {
     public void loginAndGoToManufacturingLink()  throws InterruptedException{
         //1st Initialize the loginPage & mainPage constructor
         loginPage = new LoginPage();
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
 
         //2nd Navigating to Log-In Page
         driver.get(Config.getProperty("url"));

@@ -38,7 +38,7 @@ public class TestRunner {
         //driver = Driver.getDriver();
         //1st Initialize the loginPage & mainPage constructor
         loginPage = new LoginPage();
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
 
         //2nd Navigating to Log-In Page
         Driver.getDriver().get(Config.getProperty("url"));
