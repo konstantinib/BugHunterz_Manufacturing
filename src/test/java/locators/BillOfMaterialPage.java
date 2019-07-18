@@ -46,4 +46,3 @@ public class BillOfMaterialPage {
     public WebElement WindowDisplay;
 
 }
-

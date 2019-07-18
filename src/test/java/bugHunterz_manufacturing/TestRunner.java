@@ -1,24 +1,25 @@
 package bugHunterz_manufacturing;
-
-import locators.*;
+import locators.BillOfMaterialPage;
+import locators.LoginPage;
+import locators.MainPage;
+import locators.ManufacturingHomePage;
+import locators.ManufacturingReportingPage;
+import locators.ProductsPage;
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import utilities.Config;
 import utilities.Driver;
 
 import java.util.List;
-
+import java.util.concurrent.TimeUnit;
 
 public class TestRunner {
 
@@ -28,6 +29,8 @@ public class TestRunner {
     ManufacturingHomePage manufacturingHome;
     ManufacturingReportingPage manufacturingReportPage;
     ProductsPage productPage;
+
+    SoftAssert soft;
     BillOfMaterialPage billOfMaterialsPage;
 
 
@@ -213,7 +216,7 @@ public class TestRunner {
         softAssert.assertTrue(filters.getAttribute("class").contains("toggle"));
 
     }
-    @Test(priority = 6)
+    @Test(priority = 7)
     public void NadejdaSaveButton() throws InterruptedException{
         SoftAssert soft;
 
@@ -233,11 +236,47 @@ public class TestRunner {
         //soft.assertTrue(locators.BillOfMaterials().isDisplayed(), "Bills of Materials Verification Failed");
 
 
+    }
+    @Test(priority = 5)
+    public void Gulmira_productSalesPrices(){
+
+        LoginPage login = new LoginPage();
+        ProductsPage product = new ProductsPage();
+        product.productsButton.click();
+        product.firstProduct.click();
+        product.edit.click();
+        product.sales.click();
+        product.pointOfSales.click();
+        soft = new SoftAssert();
+        soft.assertTrue(product.pointOfSales.getText().equals("Point of Sale"), "failed");
+        WebElement save = Driver.getDriver().findElement(By.xpath("//button[@accesskey='s']"));
+        save.click();
+        soft.assertAll();
+    }
+
+    @Test(priority = 6)
+    public  void Gulmira_billOfMaterials()throws InterruptedException{
+        BillOfMaterialPage bill = new BillOfMaterialPage();
+        bill.billOfMaretialsButton.click();
+        Thread.sleep(5000);
+        List<WebElement> list = Driver.getDriver().findElements(By.cssSelector(".o_list_buttons button"));
+        for (WebElement w: list) {
+            if(w.getText().equals("Import")){
+                w.click();
+                break;
+            }
+        }
+        Thread.sleep(5000);
+        bill.loadFile.click();
+        soft = new SoftAssert();
+        soft.assertTrue(bill.billsOfMaterials.isDisplayed());
+        soft.assertTrue(bill.loadFileButton.isEnabled());
+        soft.assertAll();
         billOfMaterialsPage.CreateButton.click();
         Thread.sleep(2000);
         soft.assertTrue(billOfMaterialsPage.WindowDisplay.isDisplayed(), "Create button verification failed");
-        List<WebElement> list = Driver.getDriver().findElements(By.xpath("//div[@class='o_cp_left']// button"));
-        for (WebElement w: list) {
+        List<WebElement> list1 = Driver.getDriver().findElements(By.xpath("//div[@class='o_cp_left']// button"));
+        for (WebElement w: list1) {
             if(w.getText().equals("Save")){
                 w.click();
                 break;
