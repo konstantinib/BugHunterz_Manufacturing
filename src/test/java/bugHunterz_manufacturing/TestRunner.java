@@ -228,7 +228,7 @@ public class TestRunner {
         soft.assertTrue(manufacturingHome.UserText.getText().equals("ManufacturingManager"), "Login Verification Failed");
         mainPage = new MainPage();
         mainPage.getManufacturingLink.click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Manufacturing Orders"), "Manufacturing Button Verification Failed");
         billOfMaterialsPage.BillOfMaterials.click();
         Thread.sleep(2000);
