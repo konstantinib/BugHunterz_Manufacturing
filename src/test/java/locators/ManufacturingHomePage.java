@@ -11,7 +11,7 @@ public class ManufacturingHomePage {
 
     public WebDriver driver;
 
-    public ManufacturingHomePage(WebDriver driver)
+    public ManufacturingHomePage()
     {
         this.driver = Driver.getDriver();
         PageFactory.initElements(driver , this);
