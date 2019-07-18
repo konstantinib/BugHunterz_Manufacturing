@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 
 public class LoginPage {
@@ -11,9 +12,10 @@ public class LoginPage {
     public WebDriver driver;
 
 
-    public LoginPage(WebDriver driver)
+    public LoginPage()
     {
-        this.driver = driver;
+        driver = Driver.getDriver();
+        this.driver = Driver.getDriver();
         PageFactory.initElements(driver , this);
     }
 
@@ -30,7 +32,6 @@ public class LoginPage {
 /*  By usernameTextField = By.cssSelector("#login");
     By passwordTextField = By.cssSelector("#password");
     By loginButton       = By.cssSelector(".btn.btn-primary");
-
     public WebElement getUsernameTextField()
     {
         return driver.findElement(usernameTextField);
