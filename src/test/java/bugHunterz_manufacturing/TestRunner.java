@@ -1,10 +1,6 @@
 package bugHunterz_manufacturing;
 
-import locators.LoginPage;
-import locators.MainPage;
-import locators.ManufacturingHomePage;
-import locators.ManufacturingReportingPage;
-import locators.ProductsPage;
+import locators.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +26,7 @@ public class TestRunner {
     ManufacturingReportingPage manufacturingReportPage;
     ProductsPage productPage;
 
+    SoftAssert soft;
 
 
     @BeforeMethod
@@ -214,6 +211,42 @@ public class TestRunner {
         softAssert.assertTrue(filters.getAttribute("class").contains("toggle"));
 
 
+    }
+    @Test(priority = 5)
+    public void Gulmira_productSalesPrices(){
+
+        LoginPage login = new LoginPage();
+        ProductsPage product = new ProductsPage();
+        product.productsButton.click();
+        product.firstProduct.click();
+        product.edit.click();
+        product.sales.click();
+        product.pointOfSales.click();
+        soft = new SoftAssert();
+        soft.assertTrue(product.pointOfSales.getText().equals("Point of Sale"), "failed");
+        WebElement save = Driver.getDriver().findElement(By.xpath("//button[@accesskey='s']"));
+        save.click();
+        soft.assertAll();
+    }
+
+    @Test(priority = 6)
+    public  void Gulmira_billOfMaterials()throws InterruptedException{
+        BillOfMaterialPage bill = new BillOfMaterialPage();
+        bill.billOfMaretialsButton.click();
+        Thread.sleep(5000);
+        List<WebElement> list = Driver.getDriver().findElements(By.cssSelector(".o_list_buttons button"));
+        for (WebElement w: list) {
+            if(w.getText().equals("Import")){
+                w.click();
+                break;
+            }
+        }
+        Thread.sleep(5000);
+        bill.loadFile.click();
+        soft = new SoftAssert();
+        soft.assertTrue(bill.billsOfMaterials.isDisplayed());
+        soft.assertTrue(bill.loadFileButton.isEnabled());
+        soft.assertAll();
 
     }
 

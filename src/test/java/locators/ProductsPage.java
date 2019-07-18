@@ -31,4 +31,19 @@ public class ProductsPage {
     @FindBy(className = "o_searchview_input")
     public WebElement searchButton;
 
+    @FindBy(linkText = "Products")
+    public WebElement productsButton;
+
+    @FindBy(xpath = "//div[@class='oe_kanban_global_click o_kanban_record'][1]")
+    public WebElement firstProduct;
+
+    @FindBy(xpath ="//button[@accesskey='a']")
+    public WebElement edit;
+
+    @FindBy(linkText = "Sales")
+    public WebElement sales;
+
+    @FindBy(xpath = "//div[.='Point of Sale']")
+    public WebElement pointOfSales;
+
 }
