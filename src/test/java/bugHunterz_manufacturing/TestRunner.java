@@ -234,6 +234,20 @@ public class TestRunner {
         Thread.sleep(2000);
         soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Bills of Materials"), "Bills of Materials Button Verification Failed");
         //soft.assertTrue(locators.BillOfMaterials().isDisplayed(), "Bills of Materials Verification Failed");
+        billOfMaterialsPage.CreateButton.click();
+        Thread.sleep(2000);
+        soft.assertTrue(billOfMaterialsPage.WindowDisplay.isDisplayed(), "Create button verification failed");
+        List<WebElement> list1 = Driver.getDriver().findElements(By.xpath("//div[@class='o_cp_left']// button"));
+        for (WebElement w: list1) {
+            if(w.getText().equals("Save")){
+                w.click();
+                break;
+            }
+
+        }
+        soft.assertTrue(Driver.getDriver().findElement(By.xpath("(//td[@class='o_td_label']//label)[1]")).getAttribute("class").contains("invalid"), "Save button verification failed");
+
+        soft.assertAll();
 
 
     }
@@ -272,23 +286,7 @@ public class TestRunner {
         soft.assertTrue(bill.billsOfMaterials.isDisplayed());
         soft.assertTrue(bill.loadFileButton.isEnabled());
         soft.assertAll();
-        billOfMaterialsPage.CreateButton.click();
-        Thread.sleep(2000);
-        soft.assertTrue(billOfMaterialsPage.WindowDisplay.isDisplayed(), "Create button verification failed");
-        List<WebElement> list1 = Driver.getDriver().findElements(By.xpath("//div[@class='o_cp_left']// button"));
-        for (WebElement w: list1) {
-            if(w.getText().equals("Save")){
-                w.click();
-                break;
-            }
 
-        }
-        soft.assertTrue(Driver.getDriver().findElement(By.xpath("(//td[@class='o_td_label']//label)[1]")).getAttribute("class").contains("invalid"), "Save button verification failed");
-
-//        WebElement popUp = Driver.getDriver().findElement(By.cssSelector(".o_notification_manager"));
-//        WebDriverWait d = new WebDriverWait( Driver.getDriver(), 10);
-//        d.until(ExpectedConditions.visibilityOfElementLocated(By "popUp"));
-        soft.assertAll();
     }
 
     @AfterMethod
