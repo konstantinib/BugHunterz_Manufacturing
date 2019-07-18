@@ -5,15 +5,19 @@ import locators.MainPage;
 import locators.ManufacturingHomePage;
 import locators.ManufacturingReportingPage;
 import locators.ProductsPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Config;
 import utilities.Driver;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestRunner {
