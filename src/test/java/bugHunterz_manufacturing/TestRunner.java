@@ -121,7 +121,7 @@ public class TestRunner {
     }
 
     @Test(priority = 3)
-    public void EmreSearchFunctionalityInProductSection() throws InterruptedException {
+    public void Emre_SearchFunctionalityInProductSection() throws InterruptedException {
 
         Thread.sleep(5000);
 
@@ -177,6 +177,7 @@ public class TestRunner {
 
 
     }
+
     @AfterMethod
     public void close()
     {
