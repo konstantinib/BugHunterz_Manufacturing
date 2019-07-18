@@ -1,6 +1,10 @@
 package bugHunterz_manufacturing;
-
-import locators.*;
+import locators.BillOfMaterialPage;
+import locators.LoginPage;
+import locators.MainPage;
+import locators.ManufacturingHomePage;
+import locators.ManufacturingReportingPage;
+import locators.ProductsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -27,6 +31,7 @@ public class TestRunner {
     ProductsPage productPage;
 
     SoftAssert soft;
+    BillOfMaterialPage billOfMaterialsPage;
 
 
     @BeforeMethod
@@ -93,6 +98,7 @@ public class TestRunner {
         //5th Once we click on the "Routing" link, we should assert that new graph is displayed
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(manufacturingReportPage.getGraph.isDisplayed(), "Graph was not displayed!");
+        System.out.println("Cesar's Method Finished With No Problems");
     }
 
     @Test(priority = 2)
@@ -209,6 +215,26 @@ public class TestRunner {
         WebElement filters = Driver.getDriver().findElement(By.xpath("(//button[@aria-expanded='false'])[2]"));
         softAssert.assertTrue(filters.getAttribute("class").contains("toggle"));
 
+    }
+    @Test(priority = 7)
+    public void NadejdaSaveButton() throws InterruptedException{
+        SoftAssert soft;
+
+        manufacturingHome = new ManufacturingHomePage();
+        manufacturingReportPage =  new ManufacturingReportingPage();
+        billOfMaterialsPage = new BillOfMaterialPage();
+
+        soft = new SoftAssert();
+        soft.assertTrue(manufacturingHome.UserText.getText().equals("ManufacturingManager"), "Login Verification Failed");
+        mainPage = new MainPage();
+        mainPage.getManufacturingLink.click();
+        Thread.sleep(2000);
+        soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Manufacturing Orders"), "Manufacturing Button Verification Failed");
+        billOfMaterialsPage.BillOfMaterials.click();
+        Thread.sleep(2000);
+        soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Bills of Materials"), "Bills of Materials Button Verification Failed");
+        //soft.assertTrue(locators.BillOfMaterials().isDisplayed(), "Bills of Materials Verification Failed");
+
 
     }
     @Test(priority = 5)
@@ -246,7 +272,23 @@ public class TestRunner {
         soft.assertTrue(bill.billsOfMaterials.isDisplayed());
         soft.assertTrue(bill.loadFileButton.isEnabled());
         soft.assertAll();
+        billOfMaterialsPage.CreateButton.click();
+        Thread.sleep(2000);
+        soft.assertTrue(billOfMaterialsPage.WindowDisplay.isDisplayed(), "Create button verification failed");
+        List<WebElement> list1 = Driver.getDriver().findElements(By.xpath("//div[@class='o_cp_left']// button"));
+        for (WebElement w: list1) {
+            if(w.getText().equals("Save")){
+                w.click();
+                break;
+            }
 
+        }
+        soft.assertTrue(Driver.getDriver().findElement(By.xpath("(//td[@class='o_td_label']//label)[1]")).getAttribute("class").contains("invalid"), "Save button verification failed");
+
+//        WebElement popUp = Driver.getDriver().findElement(By.cssSelector(".o_notification_manager"));
+//        WebDriverWait d = new WebDriverWait( Driver.getDriver(), 10);
+//        d.until(ExpectedConditions.visibilityOfElementLocated(By "popUp"));
+        soft.assertAll();
     }
 
     @AfterMethod
