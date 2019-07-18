@@ -1,46 +1,52 @@
 package bugHunterz_manufacturing;
 
-import locators.LoginPage;
-import locators.MainPage;
-import locators.ManufacturingHomePage;
-import locators.ManufacturingReportingPage;
-import locators.ProductsPage;
+import locators.*;
 import org.openqa.selenium.By;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import utilities.Config;
 import utilities.Driver;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 
 public class TestRunner {
 
-    static WebDriver driver = Driver.getDriver();
-    static LoginPage loginPage;
-    static MainPage mainPage;
-    static ManufacturingHomePage manufacturingHome;
-    static ManufacturingReportingPage manufacturingReportPage;
-    static ProductsPage productPage;
-
+    WebDriver driver;
+    LoginPage loginPage;
+    MainPage mainPage;
+    ManufacturingHomePage manufacturingHome;
+    ManufacturingReportingPage manufacturingReportPage;
+    ProductsPage productPage;
+    BillOfMaterialPage billOfMaterialsPage;
 
 
     @BeforeMethod
     public void loginAndGoToManufacturingLink()
     {
+        //driver = Driver.getDriver();
         //1st Initialize the loginPage & mainPage constructor
-        loginPage = new LoginPage(driver);
-        mainPage = new MainPage(driver);
+        loginPage = new LoginPage();
+        mainPage = new MainPage();
 
         //2nd Navigating to Log-In Page
-        driver.get(Config.getProperty("url"));
-        driver.manage().timeouts().implicitlyWait(5 , TimeUnit.SECONDS);
+        Driver.getDriver().get(Config.getProperty("url"));
+        //driver.manage().timeouts().implicitlyWait(5 , TimeUnit.SECONDS);
+
+        //1st Initialize the loginPage & mainPage constructor
+        loginPage = new LoginPage();
+        mainPage = new MainPage();
+
 
         //3rd Entering username
         loginPage.getUsernameTextField.sendKeys(Config.getProperty("username"));
@@ -50,11 +56,11 @@ public class TestRunner {
 
         //5th Clicking the "Login" button
         loginPage.getLoginButton.click();
-        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
         //6th Click the "Manufacturing" link on the top navigation bar
         mainPage.getManufacturingLink.click();
-        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
     }
 
@@ -62,9 +68,9 @@ public class TestRunner {
 
     public void Cesar_groupByRouting() throws InterruptedException
     {
-        manufacturingHome = new ManufacturingHomePage(driver);
+        manufacturingHome = new ManufacturingHomePage();
 
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(Driver.getDriver());
 
 
         Thread.sleep(3000);
@@ -73,7 +79,7 @@ public class TestRunner {
         //manufacturingHome.getReportingManufacturingLink.click();
 
         //2nd Click on the "Advanced Search" link on the search bar
-        manufacturingReportPage = new ManufacturingReportingPage(driver);
+        manufacturingReportPage = new ManufacturingReportingPage();
         Thread.sleep(3000);
         actions.moveToElement(manufacturingReportPage.getAdvancedSearchButton).click().perform();
 
@@ -83,7 +89,7 @@ public class TestRunner {
         //4th Click on the "Routing" link in the drop down menu
         Thread.sleep(1000);
         actions.moveToElement(manufacturingReportPage.getRoutingLink).click().perform();
-        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
+       // driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
 
         //5th Once we click on the "Routing" link, we should assert that new graph is displayed
@@ -93,17 +99,17 @@ public class TestRunner {
     }
 
     @Test(priority = 2)
-  
+
     public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
-        manufacturingHome = new ManufacturingHomePage(driver);
-        Thread.sleep(1000);
+        manufacturingHome = new ManufacturingHomePage();
+        Thread.sleep(2000);
 
 //     Click on "Product" link under "Master Data"
         manufacturingHome.productsLink.click();
 
 //     Verify that advanced search is on
         Thread.sleep(2000);
-        productPage = new ProductsPage(driver);
+        productPage = new ProductsPage();
         productPage.advancedSearchButton.click();
 
 //     Locate and click on "Filters" button
@@ -117,11 +123,141 @@ public class TestRunner {
 
     }
 
+    @Test(priority = 3)
+    public void EmreSearchFunctionalityInProductSection() throws InterruptedException {
+
+        Thread.sleep(5000);
+
+        Actions action = new Actions(Driver.getDriver());
+        WebElement scrollingDown = Driver.getDriver().findElement(By.xpath("//td[@title='Total Qty']"));
+        // to scroll down to the end of the page
+        action.moveToElement(scrollingDown).perform();
+
+        Thread.sleep(3000);
+        ProductsPage product = new ProductsPage();
+        action.moveToElement(product.searchButton);
+        Thread.sleep(2000);
+        // click the product button on the home page
+        product.productButton.click();
+
+        // storing all the lists into Webelement of List
+        List<WebElement> allList = Driver.getDriver().findElements(By.xpath("//div[@class='o_kanban_view o_kanban_ungrouped']//strong"));
+        // loop through all list
+        for(WebElement w: allList){
+
+            if(w.getText().equals("Book")){
+                // choosing the product that we're looking for
+                w.click();
+                break;
+            }
+        }
+        // going back to previous page
+        Thread.sleep(4000);
+        Driver.getDriver().navigate().back();
+
+        Thread.sleep(2000);
+        // putting input into searchButton
+        product.searchButton.sendKeys("iphone 8");
+        Thread.sleep(2000);
+        // deleting input from searchButton
+        product.searchButton.clear();
+        Thread.sleep(2000);
+        // putting input into searchButton and pressing enter
+        product.searchButton.sendKeys("IPHONE 8" + Keys.ENTER);
+
+        boolean check = false;
+        Thread.sleep(3000);
+        // storing all the results into List
+        List<WebElement> listForInput = Driver.getDriver().findElements(By.xpath("//div[@class='o_kanban_view o_kanban_ungrouped']//strong"));
+
+        for(WebElement w: listForInput){
+            if(w.getText().equalsIgnoreCase("iphone 8")){
+                check = true;
+            }
+        }
+        Assert.assertTrue(check);
+
+
+
+    }
+
+    @Test(priority = 4)
+    public void aizada_FilterButton() throws InterruptedException
+    {
+        Thread.sleep(3000);
+        // 1- Click on second ManufacturingOrders link in Manufacturing home page
+        WebElement manufacturingOrderLink = Driver.getDriver().findElement(By.xpath("(//span[@class='oe_menu_text'])[19]"));
+        manufacturingOrderLink.click();
+
+        String actualMOLDisplayed = Driver.getDriver().findElement(By.xpath("(//span[@class='oe_menu_text'])[19]")).getText();
+        String expectedResult = "Manufacturing Orders";
+
+        // 2- Creating an object of SoftAssert
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(actualMOLDisplayed.equals(expectedResult));
+        Thread.sleep(3000);
+
+        // 3- Click on plus button, to see the filter button
+        WebElement plusButton = Driver.getDriver().findElement(By.xpath("//span[@title='Advanced Search...']"));
+        plusButton.click();
+
+        // 4- Checking the plus button is changed to minus
+        WebElement advanceSearch = Driver.getDriver().findElement(By.xpath("//span[@title='Advanced Search...']"));
+        softAssert.assertTrue(advanceSearch.getAttribute("class").contains("minus"));
+        Thread.sleep(3000);
+
+        // 5- Click on filters button
+        WebElement filtersButton = Driver.getDriver().findElement(By.xpath("(//button[@aria-expanded='false'])[2]"));
+        filtersButton.click();
+        WebElement filters = Driver.getDriver().findElement(By.xpath("(//button[@aria-expanded='false'])[2]"));
+        softAssert.assertTrue(filters.getAttribute("class").contains("toggle"));
+
+    }
+    @Test(priority = 6)
+    public void NadejdaSaveButton() throws InterruptedException{
+        SoftAssert soft;
+
+        manufacturingHome = new ManufacturingHomePage();
+        manufacturingReportPage =  new ManufacturingReportingPage();
+        billOfMaterialsPage = new BillOfMaterialPage();
+
+        soft = new SoftAssert();
+        soft.assertTrue(manufacturingHome.UserText.getText().equals("ManufacturingManager"), "Login Verification Failed");
+        mainPage = new MainPage();
+        mainPage.getManufacturingLink.click();
+        Thread.sleep(2000);
+        soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Manufacturing Orders"), "Manufacturing Button Verification Failed");
+        billOfMaterialsPage.BillOfMaterials.click();
+        Thread.sleep(2000);
+        soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Bills of Materials"), "Bills of Materials Button Verification Failed");
+        //soft.assertTrue(locators.BillOfMaterials().isDisplayed(), "Bills of Materials Verification Failed");
+
+
+        billOfMaterialsPage.CreateButton.click();
+        Thread.sleep(2000);
+        soft.assertTrue(billOfMaterialsPage.WindowDisplay.isDisplayed(), "Create button verification failed");
+        List<WebElement> list = Driver.getDriver().findElements(By.xpath("//div[@class='o_cp_left']// button"));
+        for (WebElement w: list) {
+            if(w.getText().equals("Save")){
+                w.click();
+                break;
+            }
+
+        }
+        soft.assertTrue(Driver.getDriver().findElement(By.xpath("(//td[@class='o_td_label']//label)[1]")).getAttribute("class").contains("invalid"), "Save button verification failed");
+
+//        WebElement popUp = Driver.getDriver().findElement(By.cssSelector(".o_notification_manager"));
+//        WebDriverWait d = new WebDriverWait( Driver.getDriver(), 10);
+//        d.until(ExpectedConditions.visibilityOfElementLocated(By "popUp"));
+        soft.assertAll();
+    }
+
     @AfterMethod
     public void close()
     {
-        driver.close();
-        driver = null;
+//        driver.close();
+//        driver = null;
+        Driver.quitDriver();
     }
 
 
