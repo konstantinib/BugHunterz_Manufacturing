@@ -25,7 +25,9 @@ public class ManufacturingHomePage {
     @FindBy(xpath = "//a[@data-menu='437']/span")
     public WebElement productsLink;
 
-
+    @FindBy(xpath = "//span[.='ManufacturingManager']")
+    public WebElement UserText;
+///
 
 
 }
