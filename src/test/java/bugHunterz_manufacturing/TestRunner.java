@@ -34,7 +34,7 @@ public class TestRunner {
     BillOfMaterialPage billOfMaterialsPage;
 
     @BeforeMethod
-    public void loginAndGoToManufacturingLink()
+    public void loginAndGoToManufacturingLink() throws InterruptedException
     {
 
         //1st Initialize the loginPage & mainPage constructor
@@ -59,7 +59,8 @@ public class TestRunner {
 
         //5th Clicking the "Login" button
         loginPage.getLoginButton.click();
-        //driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
+        Thread.sleep(2000);
+//        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
         //6th Click the "Manufacturing" link on the top navigation bar
         mainPage.getManufacturingLink.click();
@@ -90,7 +91,7 @@ public class TestRunner {
         actions.moveToElement(manufacturingReportPage.getGroupByButton).click().perform();
 
         //4th Click on the "Routing" link in the drop down menu
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         actions.moveToElement(manufacturingReportPage.getRoutingLink).click().perform();
        // driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
@@ -111,23 +112,23 @@ public class TestRunner {
         manufacturingHome.productsLink.click();
 
 //     Verify that advanced search is on
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         productPage = new ProductsPage();
         productPage.advancedSearchButton.click();
 
 //     Locate and click on "Filters" button
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         productPage.filtersLink.click();
 
 //     Verifying that dropdown menu is displayed
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(productPage.filtersDropDownMenu.isDisplayed(), "Drop down menu is not displayed!");
-
+        softAssert.assertAll();
     }
 
     @Test(priority = 3)
-    public void EmreSearchFunctionalityInProductSection() throws InterruptedException {
+    public void Emre_SearchFunctionalityInProductSection() throws InterruptedException {
 
         Thread.sleep(5000);
 
@@ -185,7 +186,7 @@ public class TestRunner {
     }
 
     @Test(priority = 4)
-    public void aizada_FilterButton() throws InterruptedException
+    public void Aizada_FilterButton() throws InterruptedException
     {
         Thread.sleep(3000);
         // 1- Click on second ManufacturingOrders link in Manufacturing home page
@@ -217,7 +218,7 @@ public class TestRunner {
 
     }
     @Test(priority = 7)
-    public void NadejdaSaveButton() throws InterruptedException{
+    public void Nadejda_SaveButton() throws InterruptedException{
         SoftAssert soft;
 
         manufacturingHome = new ManufacturingHomePage();
@@ -268,7 +269,7 @@ public class TestRunner {
         Thread.sleep(2000);
         product.saveButton.click();
         soft = new SoftAssert();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         String actualMessage = product.alertMessageList.getText();
         String expectedMessage = "The following fields are invalid:";
         soft.assertTrue(actualMessage.contains(expectedMessage));
@@ -307,7 +308,7 @@ public class TestRunner {
         Thread.sleep(3000);
         WebElement InportButton = Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-sm btn-default o_button_import']"));
         InportButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         WebElement LoadFile = Driver.getDriver().findElement(By.xpath("//label[@class='btn btn-primary']"));
         LoadFile.click();
     }

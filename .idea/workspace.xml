@@ -4,15 +4,7 @@
     <list default="true" id="8b346427-db99-445d-9c76-85f4352f1d75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/locators/BillOfMaterialPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/locators/BillOfMaterialPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/locators/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/locators/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/locators/ManufacturingHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/locators/ManufacturingHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/locators/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/locators/ProductsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/bugHunterz_Manufacturing/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/bugHunterz_Manufacturing/TestRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/BillOfMaterialPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/locators/BillOfMaterialPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/MainPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/locators/MainPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ManufacturingHomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/locators/ManufacturingHomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ProductsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/locators/ProductsPage.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,10 +22,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="271" column="23" selection-start-line="271" selection-start-column="23" selection-end-line="271" selection-end-column="23" />
+            <state relative-caret-position="753">
+              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#13762#13763#0" expanded="true" />
+                <element signature="e#13797#13798#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,63 +130,12 @@
     <panes>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bugHunterz_manufacturing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="locators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utilities" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -209,8 +152,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.TestRunner.Gulmira_productSalesPrices">
-    <configuration name="TestRunner.David_CheckingTheCancelImports" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TestRunner">
+    <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Manufacturing" />
       <extension name="coverage">
         <pattern>
@@ -220,7 +163,42 @@
       </extension>
       <option name="PACKAGE_NAME" value="bugHunterz_manufacturing" />
       <option name="MAIN_CLASS_NAME" value="bugHunterz_manufacturing.TestRunner" />
-      <option name="METHOD_NAME" value="David_CheckingTheCancelImports" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner.Cesar_groupByRouting" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Manufacturing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bugHunterz_manufacturing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bugHunterz_manufacturing" />
+      <option name="MAIN_CLASS_NAME" value="bugHunterz_manufacturing.TestRunner" />
+      <option name="METHOD_NAME" value="Cesar_groupByRouting" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner.Gulmira_billOfMaterials" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Manufacturing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bugHunterz_manufacturing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bugHunterz_manufacturing" />
+      <option name="MAIN_CLASS_NAME" value="bugHunterz_manufacturing.TestRunner" />
+      <option name="METHOD_NAME" value="Gulmira_billOfMaterials" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -246,7 +224,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner.Hamza_importButton" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRunner.aizada_FilterButton" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Manufacturing" />
       <extension name="coverage">
         <pattern>
@@ -256,43 +234,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="bugHunterz_manufacturing" />
       <option name="MAIN_CLASS_NAME" value="bugHunterz_manufacturing.TestRunner" />
-      <option name="METHOD_NAME" value="Hamza_importButton" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestRunner.Konstantin_FiltersDropDownMenu" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Manufacturing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bugHunterz_manufacturing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bugHunterz_manufacturing" />
-      <option name="MAIN_CLASS_NAME" value="bugHunterz_manufacturing.TestRunner" />
-      <option name="METHOD_NAME" value="Konstantin_FiltersDropDownMenu" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestRunner.NadejdaSaveButton" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Manufacturing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bugHunterz_manufacturing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bugHunterz_manufacturing" />
-      <option name="MAIN_CLASS_NAME" value="bugHunterz_manufacturing.TestRunner" />
-      <option name="METHOD_NAME" value="NadejdaSaveButton" />
+      <option name="METHOD_NAME" value="aizada_FilterButton" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -302,11 +244,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.TestRunner.Cesar_groupByRouting" />
+        <item itemvalue="TestNG.TestRunner.Gulmira_billOfMaterials" />
         <item itemvalue="TestNG.TestRunner.Gulmira_productSalesPrices" />
-        <item itemvalue="TestNG.TestRunner.Konstantin_FiltersDropDownMenu" />
-        <item itemvalue="TestNG.TestRunner.NadejdaSaveButton" />
-        <item itemvalue="TestNG.TestRunner.David_CheckingTheCancelImports" />
-        <item itemvalue="TestNG.TestRunner.Hamza_importButton" />
+        <item itemvalue="TestNG.TestRunner.aizada_FilterButton" />
       </list>
     </recent_temporary>
   </component>
@@ -489,39 +431,60 @@
       <option name="project" value="LOCAL" />
       <updated>1563505058545</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="final version">
+      <created>1563514507248</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1563514507248</updated>
+    </task>
+    <task id="LOCAL-00026" summary="final version corrections">
+      <created>1563515544044</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1563515544044</updated>
+    </task>
+    <task id="LOCAL-00027" summary="final version corrections">
+      <created>1563516073320</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1563516073320</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 10m 58s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner - 2019.07.19 at 01h 07m 46s.xml">
+      <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 11m 49s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner - 2019.07.19 at 01h 09m 30s.xml">
+      <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 12m 16s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner - 2019.07.19 at 01h 10m 43s.xml">
+      <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 18m 24s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner - 2019.07.19 at 01h 11m 05s.xml">
+      <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 21m 18s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner_Cesar_groupByRouting - 2019.07.19 at 01h 11m 41s.xml">
+      <configuration name="TestRunner.Cesar_groupByRouting" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 24m 38s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner_Cesar_groupByRouting - 2019.07.19 at 01h 12m 20s.xml">
+      <configuration name="TestRunner.Cesar_groupByRouting" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 25m 06s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner_Cesar_groupByRouting - 2019.07.19 at 01h 12m 55s.xml">
+      <configuration name="TestRunner.Cesar_groupByRouting" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 26m 00s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner - 2019.07.19 at 01h 14m 17s.xml">
+      <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 28m 51s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner - 2019.07.19 at 01h 15m 36s.xml">
+      <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRunner_Gulmira_productSalesPrices - 2019.07.19 at 00h 30m 15s.xml">
-      <configuration name="TestRunner.Gulmira_productSalesPrices" configurationId="TestNG" />
+    <history-entry file="TestRunner - 2019.07.19 at 01h 16m 59s.xml">
+      <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -579,7 +542,9 @@
     <MESSAGE value="I don't know what is going on(2)" />
     <MESSAGE value="David's method added" />
     <MESSAGE value="David's method corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="David's method corrected" />
+    <MESSAGE value="final version" />
+    <MESSAGE value="final version corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version corrections" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/package-info.java">
@@ -699,10 +664,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="271" column="23" selection-start-line="271" selection-start-column="23" selection-end-line="271" selection-end-column="23" />
+        <state relative-caret-position="753">
+          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#13762#13763#0" expanded="true" />
+            <element signature="e#13797#13798#0" expanded="true" />
           </folding>
         </state>
       </provider>
