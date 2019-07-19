@@ -1,5 +1,6 @@
 package locators;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,7 @@ public class BillOfMaterialPage {
         PageFactory.initElements(driver , this);
     }
 
-    @FindBy(linkText = "Bills of Materials")
+    @FindBy(css = "[href*='id=436&action=600']")
     public WebElement billOfMaretialsButton;
 
     @FindBy(xpath = "//label[@class='btn btn-primary']")
@@ -44,5 +45,8 @@ public class BillOfMaterialPage {
 
     @FindBy(css = ".o_form_sheet")
     public WebElement WindowDisplay;
+
+    @FindBy(css = ".btn.btn-sm.btn-default.o_button_import")
+    public WebElement importButton;
 
 }

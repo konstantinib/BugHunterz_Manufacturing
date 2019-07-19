@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class ProductsPage {
 
     public WebDriver driver;
@@ -40,10 +42,12 @@ public class ProductsPage {
     @FindBy(xpath ="//button[@accesskey='a']")
     public WebElement edit;
 
-    @FindBy(linkText = "Sales")
+    @FindBy(css = "[class*='o_field_number o_input'] .o_input")
     public WebElement sales;
 
-    @FindBy(xpath = "//div[.='Point of Sale']")
-    public WebElement pointOfSales;
+    @FindBy(css = ".btn.btn-primary.btn-sm.o_form_button_save")
+    public WebElement saveButton;
 
+    @FindBy(css = ".o_notification_manager")
+    public WebElement alertMessageList;
 }

@@ -33,15 +33,15 @@ public class TestRunner {
     SoftAssert soft;
     BillOfMaterialPage billOfMaterialsPage;
 
-
     @BeforeMethod
     public void loginAndGoToManufacturingLink()
     {
-        //driver = Driver.getDriver();
+
         //1st Initialize the loginPage & mainPage constructor
         loginPage = new LoginPage();
         mainPage = new MainPage();
 
+        billOfMaterialsPage = new BillOfMaterialPage();
         //2nd Navigating to Log-In Page
         Driver.getDriver().get(Config.getProperty("url"));
         //driver.manage().timeouts().implicitlyWait(5 , TimeUnit.SECONDS);
@@ -105,7 +105,7 @@ public class TestRunner {
 
     public void Konstantin_FiltersDropDownMenu() throws InterruptedException{
         manufacturingHome = new ManufacturingHomePage();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
 //     Click on "Product" link under "Master Data"
         manufacturingHome.productsLink.click();
@@ -230,7 +230,7 @@ public class TestRunner {
         mainPage.getManufacturingLink.click();
         Thread.sleep(4000);
         soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Manufacturing Orders"), "Manufacturing Button Verification Failed");
-        billOfMaterialsPage.BillOfMaterials.click();
+        billOfMaterialsPage.billOfMaretialsButton.click();
         Thread.sleep(2000);
         soft.assertTrue(billOfMaterialsPage.ManufOrderDispayed.getText().contains("Bills of Materials"), "Bills of Materials Button Verification Failed");
         //soft.assertTrue(locators.BillOfMaterials().isDisplayed(), "Bills of Materials Verification Failed");
@@ -252,19 +252,26 @@ public class TestRunner {
 
     }
     @Test(priority = 5)
-    public void Gulmira_productSalesPrices(){
+    public void Gulmira_productSalesPrices() throws InterruptedException{
 
         LoginPage login = new LoginPage();
         ProductsPage product = new ProductsPage();
+        Thread.sleep(2000);
         product.productsButton.click();
+        Thread.sleep(2000);
         product.firstProduct.click();
+        Thread.sleep(2000);
         product.edit.click();
-        product.sales.click();
-        product.pointOfSales.click();
+        Thread.sleep(3000);
+        product.sales.clear();
+        product.sales.sendKeys("abc" + Keys.ENTER);
+        Thread.sleep(2000);
+        product.saveButton.click();
         soft = new SoftAssert();
-        soft.assertTrue(product.pointOfSales.getText().equals("Point of Sale"), "failed");
-        WebElement save = Driver.getDriver().findElement(By.xpath("//button[@accesskey='s']"));
-        save.click();
+        Thread.sleep(1000);
+        String actualMessage = product.alertMessageList.getText();
+        String expectedMessage = "The following fields are invalid:";
+        soft.assertTrue(actualMessage.contains(expectedMessage));
         soft.assertAll();
     }
 
@@ -305,11 +312,43 @@ public class TestRunner {
         LoadFile.click();
     }
 
+    @Test(priority = 9)
+    public void Hamza_importButton() throws InterruptedException{
+
+        String titleManufacturing = mainPage.title.getText();
+        Thread.sleep(2000);
+        billOfMaterialsPage.billOfMaretialsButton.click();
+        Thread.sleep(3000);
+        String billOfMaterialsTitle = mainPage.title.getText();
+        boolean check2 = titleManufacturing.equals(billOfMaterialsTitle);
+        Assert.assertFalse(check2);
+        if(billOfMaterialsPage.importButton.getText().equalsIgnoreCase("import")){
+            billOfMaterialsPage.importButton.click();
+        }
+        Thread.sleep(3000);
+        Assert.assertFalse(billOfMaterialsTitle.equals(mainPage.title.getText()));
+
+    }
+    @Test(priority = 10)
+    public void Hamza_cancelButtonFunctionality() throws InterruptedException {
+
+        String titleManufacturing = mainPage.title.getText();
+        billOfMaterialsPage.importButton.click();
+        Thread.sleep(3000);
+        String text2 =  mainPage.title.getText();
+        Assert.assertTrue(text2.contains("Import a File"));
+      if(mainPage.cancelButton.getText().equalsIgnoreCase("Cancel")){
+          mainPage.cancelButton.click();
+      }
+        Thread.sleep(4000);
+        String titleOfManufacturing = mainPage.title.getText();
+        Assert.assertTrue(titleOfManufacturing.contains("Manufacturing Orders"), "It didnt land on manufacturing page");
+    }
+
+
     @AfterMethod
     public void close()
     {
-//        driver.close();
-//        driver = null;
         Driver.quitDriver();
     }
 
