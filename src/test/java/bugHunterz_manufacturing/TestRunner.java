@@ -99,7 +99,7 @@ public class TestRunner {
         //5th Once we click on the "Routing" link, we should assert that new graph is displayed
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(manufacturingReportPage.getGraph.isDisplayed(), "Graph was not displayed!");
-        System.out.println("Cesar's Method Finished With No Problems");
+    
     }
 
     @Test(priority = 2)
