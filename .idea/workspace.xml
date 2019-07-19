@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b346427-db99-445d-9c76-85f4352f1d75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/bugHunterz_Manufacturing/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/bugHunterz_Manufacturing/TestRunner.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3184">
-              <caret line="232" column="43" selection-start-line="232" selection-start-column="43" selection-end-line="232" selection-end-column="43" />
+            <state relative-caret-position="123">
+              <caret line="293" column="10" selection-start-line="293" selection-start-column="10" selection-end-line="299" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.TestRunner.NadejdaSaveButton">
+  <component name="RunManager" selected="TestNG.TestRunner.CheckingTheCancelImports">
     <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Manufacturing" />
       <extension name="coverage">
@@ -201,7 +202,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner.Cesar_groupByRouting" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRunner.CheckingTheCancelImports" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Manufacturing" />
       <extension name="coverage">
         <pattern>
@@ -211,7 +212,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="bugHunterz_manufacturing" />
       <option name="MAIN_CLASS_NAME" value="bugHunterz_manufacturing.TestRunner" />
-      <option name="METHOD_NAME" value="Cesar_groupByRouting" />
+      <option name="METHOD_NAME" value="CheckingTheCancelImports" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -275,11 +276,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestRunner.CheckingTheCancelImports" />
         <item itemvalue="TestNG.TestRunner.NadejdaSaveButton" />
         <item itemvalue="TestNG.TestRunner" />
         <item itemvalue="TestNG.TestRunner.Gulmira_billOfMaterials" />
         <item itemvalue="TestNG.TestRunner.Konstantin_FiltersDropDownMenu" />
-        <item itemvalue="TestNG.TestRunner.Cesar_groupByRouting" />
       </list>
     </recent_temporary>
   </component>
@@ -441,13 +442,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563483995383</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="I don't know what is going on">
+      <created>1563504513363</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1563504513363</updated>
+    </task>
+    <task id="LOCAL-00023" summary="David's method added">
+      <created>1563504696965</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1563504696965</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRunner - 2019.07.17 at 17h 49m 57s.xml">
-      <configuration name="TestRunner" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="TestRunner - 2019.07.17 at 18h 25m 19s.xml">
       <configuration name="TestRunner" configurationId="TestNG" />
     </history-entry>
@@ -475,9 +487,13 @@
     <history-entry file="TestRunner_NadejdaSaveButton - 2019.07.18 at 16h 06m 12s.xml">
       <configuration name="TestRunner.NadejdaSaveButton" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="TestRunner_CheckingTheCancelImports - 2019.07.18 at 21h 54m 05s.xml">
+      <configuration name="TestRunner.CheckingTheCancelImports" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1769437" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -489,7 +505,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23620933" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40311173" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -526,7 +542,10 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/konstantinib/BugHunterz_Manufacturing into KonstantinBranch&#10;&#10;# Conflicts:&#10;#&#9;target/test-classes/locators/BillOfMaterialPage.class&#10;#&#9;target/test-classes/locators/ManufacturingHomePage.class&#10;#&#9;target/test-classes/locators/ProductsPage.class" />
     <MESSAGE value="Nadya's method fixed" />
     <MESSAGE value="sleep added" />
-    <option name="LAST_COMMIT_MESSAGE" value="sleep added" />
+    <MESSAGE value="I don't know what is going on" />
+    <MESSAGE value="I don't know what is going on(2)" />
+    <MESSAGE value="David's method added" />
+    <option name="LAST_COMMIT_MESSAGE" value="David's method added" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/package-info.java">
@@ -636,8 +655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3184">
-          <caret line="232" column="43" selection-start-line="232" selection-start-column="43" selection-end-line="232" selection-end-column="43" />
+        <state relative-caret-position="123">
+          <caret line="293" column="10" selection-start-line="293" selection-start-column="10" selection-end-line="299" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
