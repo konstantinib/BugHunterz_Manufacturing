@@ -90,7 +90,7 @@ public class TestRunner {
         actions.moveToElement(manufacturingReportPage.getGroupByButton).click().perform();
 
         //4th Click on the "Routing" link in the drop down menu
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         actions.moveToElement(manufacturingReportPage.getRoutingLink).click().perform();
        // driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
@@ -111,19 +111,19 @@ public class TestRunner {
         manufacturingHome.productsLink.click();
 
 //     Verify that advanced search is on
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         productPage = new ProductsPage();
         productPage.advancedSearchButton.click();
 
 //     Locate and click on "Filters" button
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         productPage.filtersLink.click();
 
 //     Verifying that dropdown menu is displayed
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(productPage.filtersDropDownMenu.isDisplayed(), "Drop down menu is not displayed!");
-
+        softAssert.assertAll();
     }
 
     @Test(priority = 3)
@@ -268,7 +268,7 @@ public class TestRunner {
         Thread.sleep(2000);
         product.saveButton.click();
         soft = new SoftAssert();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         String actualMessage = product.alertMessageList.getText();
         String expectedMessage = "The following fields are invalid:";
         soft.assertTrue(actualMessage.contains(expectedMessage));
@@ -307,7 +307,7 @@ public class TestRunner {
         Thread.sleep(3000);
         WebElement InportButton = Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-sm btn-default o_button_import']"));
         InportButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         WebElement LoadFile = Driver.getDriver().findElement(By.xpath("//label[@class='btn btn-primary']"));
         LoadFile.click();
     }
