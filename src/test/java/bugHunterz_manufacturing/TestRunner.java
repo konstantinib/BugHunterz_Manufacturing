@@ -290,20 +290,17 @@ public class TestRunner {
     }
 
     @Test(priority = 8)
-    public void CheckingTheCancelImports() {
-        Driver.getDriver().get(Config.getProperty("url"));
-        WebElement login = Driver.getDriver().findElement(By.id("login"));
-        login.sendKeys(Config.getProperty("userName"));
-        WebElement password = Driver.getDriver().findElement(By.id("password"));
-        password.sendKeys("kop98tfgQ68");
-        WebElement logIn = Driver.getDriver().findElement(By.name("password"));
-        logIn.submit();
+    public void David_CheckingTheCancelImports() throws InterruptedException {
+
         WebElement manufacturingButton = Driver.getDriver().findElement(By.linkText("Manufacturing"));
         manufacturingButton.click();
+        Thread.sleep(3000);
         WebElement BillOfMaterials = Driver.getDriver().findElement(By.linkText("Bills of Materials"));
         BillOfMaterials.click();
+        Thread.sleep(3000);
         WebElement InportButton = Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-sm btn-default o_button_import']"));
         InportButton.click();
+        Thread.sleep(1000);
         WebElement LoadFile = Driver.getDriver().findElement(By.xpath("//label[@class='btn btn-primary']"));
         LoadFile.click();
     }
