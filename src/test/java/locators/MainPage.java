@@ -1,5 +1,6 @@
 package locators;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import utilities.Driver;
 
 public class MainPage {
 
-    public WebDriver driver;
+    static public WebDriver driver;
 
     public MainPage()
     {
@@ -19,9 +20,13 @@ public class MainPage {
     @FindBy(linkText = "Manufacturing")
     public WebElement getManufacturingLink;
 
-//    public WebElement getManufactoringLink()
-//    {
-//
-//        return driver.findElement(manufactoringLink);
-//    }
+    @FindBy(css = ".btn.btn-sm.btn-default.o_import_cancel")
+    public WebElement cancelButton;
+
+    @FindBy(css = ".breadcrumb .active")
+    public WebElement title;
+
+    @FindBy(css = ".btn.btn-sm.btn-default.o_button_import")
+    public WebElement importButton;
+
 }

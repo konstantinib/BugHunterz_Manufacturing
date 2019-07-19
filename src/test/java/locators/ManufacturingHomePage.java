@@ -27,7 +27,9 @@ public class ManufacturingHomePage {
 
     @FindBy(xpath = "//span[.='ManufacturingManager']")
     public WebElement UserText;
-///
+
+    @FindBy(className = "oe_topbar_name")
+    public WebElement userTitle;
 
 
 }
