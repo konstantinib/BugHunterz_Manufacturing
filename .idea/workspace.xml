@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8b346427-db99-445d-9c76-85f4352f1d75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/bugHunterz_Manufacturing/TestRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/BillOfMaterialPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/LoginPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/MainPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ManufacturingHomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ManufacturingReportingPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ProductsPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/zazu/TC102Aizada.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4180">
+            <state relative-caret-position="3800">
               <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -40,16 +29,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="399">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/locators/BillOfMaterialPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="817">
@@ -61,7 +50,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/locators/ProductsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
+            <state relative-caret-position="817">
               <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,6 +98,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/utilities/Config.java" />
         <option value="$PROJECT_DIR$/src/test/java/utilities/Driver.java" />
         <option value="$PROJECT_DIR$/src/test/java/utilities/TestBase.java" />
@@ -122,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/test/java/locators/MainPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/locators/ProductsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -144,17 +133,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
               <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
@@ -185,13 +170,28 @@
             <path>
               <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
               <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="locators" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utilities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Manufacturing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Manufacturing" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -521,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563517367448</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="uno mas">
+      <created>1565206122419</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1565206122419</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -558,9 +565,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28217158" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20308311" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -577,7 +583,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.32956153" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49932975" visible="true" weight="0.2503536" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49932975" visible="true" weight="0.19660537" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -685,7 +691,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/bugHunterz_manufacturing/TestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4180">
+        <state relative-caret-position="3800">
           <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -693,16 +699,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/locators/BillOfMaterialPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/locators/ProductsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
+        <state relative-caret-position="817">
           <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -726,8 +725,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        <state relative-caret-position="399">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/locators/BillOfMaterialPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
         </state>
       </provider>
     </entry>

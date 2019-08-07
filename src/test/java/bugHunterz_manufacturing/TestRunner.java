@@ -217,6 +217,7 @@ public class TestRunner {
         softAssert.assertTrue(filters.getAttribute("class").contains("toggle"));
 
     }
+
     @Test(priority = 7)
     public void Nadejda_SaveButton() throws InterruptedException{
         SoftAssert soft;
