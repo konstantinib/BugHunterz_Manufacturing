@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8b346427-db99-445d-9c76-85f4352f1d75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/bugHunterz_Manufacturing/TestRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/BillOfMaterialPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/LoginPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/MainPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ManufacturingHomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ManufacturingReportingPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/locators/ProductsPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/zazu/TC102Aizada.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -521,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563517367448</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="newtest">
+      <created>1565202501495</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1565202501495</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -589,7 +585,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
     <MESSAGE value="configuration setup added" />
     <MESSAGE value="LoginPage class added with locators package" />
     <MESSAGE value="Konstantin's method added" />
@@ -614,7 +609,8 @@
     <MESSAGE value="final version" />
     <MESSAGE value="final version corrections" />
     <MESSAGE value="uno mas" />
-    <option name="LAST_COMMIT_MESSAGE" value="uno mas" />
+    <MESSAGE value="newtest" />
+    <option name="LAST_COMMIT_MESSAGE" value="newtest" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/package-info.java" />
@@ -727,7 +723,7 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
